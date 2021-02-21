@@ -56,7 +56,7 @@ nav {
 .card {
     height: 195px;
     flex: 0 0 195px;
-    background-color: #bfbfbf;
+    background-color: white;
     border: 3px solid #222222;
     margin: 5px;
     text-align: center;

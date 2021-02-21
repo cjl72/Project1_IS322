@@ -13,17 +13,61 @@
 
     function renderList (results) {
         var items = document.querySelector('#products');
+        items.innerHTML = '';
         var cars = results.map(function (result) {
             var newDiv = document.createElement("div");
             var img = document.createElement("img");
             img.src = result.img;
             newDiv.className = 'card';
             newDiv.appendChild(img);
-            newDiv.innerHTML += (result.year + " " + result.model + " " + result.make + " Price - $" + result.price.toString());
+            newDiv.innerHTML += (result.year + " " + result.make + " " + result.model + " Price - $" + result.price.toString());
             items.appendChild(newDiv);
         });
+
     }
 
     renderList(mockDB);
 
+    function orderBy(sortValue) {
+        var sortedResults = (sortValue === "make") ?
+            mockDB.sort(function (a, b) {
+                var nameA = a.make.toUpperCase();
+                var nameB = b.make.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1
+                }
+            }) :
+            mockDB.sort(function (a, b){
+                return a[sortValue] - b[sortValue];
+            });
+        renderList(sortedResults);
+    }
+    document.querySelector('#orderBy').addEventListener('change', function(event){
+        orderBy(event.target.value);
+    });
+
+    function toggleMake(make) {
+        var filteredResults = mockDB.filter(function (result){
+            return (make === result.make)
+        });
+        renderList(filteredResults);
+    }
+    document.querySelector('#make').addEventListener('change', function(event){
+        var value = event.target.value;
+        toggleMake(value);
+    });
+
+    function priceRange(price) {
+        var filteredResults = mockDB.filter(function (result){
+            return (price || (result.price <= 100000));
+        });
+        renderList(filteredResults);
+    }
+    document.querySelector('#priceRange').addEventListener('change', function(event){
+        var value = event.target.value === 'true';
+        priceRange(value);
+    });
 })();
