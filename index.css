@@ -59,6 +59,12 @@ nav {
     background-color: #bfbfbf;
     border: 3px solid #222222;
     margin: 5px;
+    text-align: center;
+}
+.card img {
+    image-rendering: auto;
+    width: 195px;
+    height: 120px;
 }
 
 @media only screen and (max-width: 1024px){
