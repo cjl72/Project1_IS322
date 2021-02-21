@@ -45,9 +45,20 @@ nav {
 .filter {
     margin: 15px;
 }
-.products {
-    margin: 15px;
+#products {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 5px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    height: 195px;
+    flex: 0 0 195px;
+    background-color: #bfbfbf;
+    border: 3px solid #222222;
+    margin: 5px;
 }
 
 @media only screen and (max-width: 1024px){
