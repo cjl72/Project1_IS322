@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Luxury Car Market</title>
+    <nav>
+        <ul class="navbar">
+            <li class="logo"><a href="productList.html">Luxury Car Market</a></li>
+            <li class="item"><a href="productList.html">Product List</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+<div class="web-container">
+    <div class="filters">
+        <div class="filter" style="margin-right: 20px;">
+            <label for="orderBy">Order By</label>
+            <select id="orderBy" name="orderBy">
+                <option value="make">Make</option>
+                <option value="model">Model</option>
+                <option value="year">Year</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="priceRange">Price Range</label>
+            <select id="priceRange" name="priceRange">
+                <option value="true">Under $100,000</option>
+                <option value="false">Over $100,000</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="make">Make</label>
+            <select id="make" name="make">
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Lamborghini">Lamborghini</option>
+            </select>
+        </div>
+    </div>
+    <div id="products">
+
+    </div>
+</div>
+<script type="text/javascript" src="productList.js"></script>
+</body>
+</html>

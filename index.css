@@ -1,0 +1,72 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("Car_Background.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+nav {
+    background: #222;
+    padding: 30px;
+    margin: 0px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style-type: none;
+    align-items: center;
+}
+.logo a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    font-family: "Poor Richard";
+}
+.item a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: "Poor Richard";
+}
+.web-container {
+    width: 1024px;
+    margin: auto;
+    display: flex;
+    min-height: 100vh;
+    background-color: white;
+}
+.filters {
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+}
+.filter {
+    margin: 15px;
+}
+.products {
+    margin: 15px;
+    display: flex;
+}
+
+@media only screen and (max-width: 1024px){
+    .web-container{
+        flex-direction: column;
+        width: 900px;
+    }
+    .filters {
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+    .web-container{
+        width: 720px;
+    }
+}
+@media only screen and (max-width: 749px) {
+    .web-container {
+        margin: 0 15px;
+        width: calc(100% - 30px);
+    }
+}
